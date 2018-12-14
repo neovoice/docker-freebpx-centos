@@ -7,6 +7,11 @@ The version of asterisk is 13 and is installed from tucny repositories (thank yo
 
 Inside /var/lib/asterisk/modplus you can put g729 and g729 binary codecs from: http://asterisk.hosting.lv/
 
+Systemd works good and enable services: iptables, fail2ban, asterisk, mariadbd and httpd.
+
 How to run this image:
-#  docker run -d --name FreePBX --cap-add=NET_ADMIN --cap-add=NET_RAW -v /sys/fs/cgroup:/sys/fs/cgroup:ro --tmpfs /run -v freepbxvol:/var -v /etc/localtime:/etc/localtime:ro  etates/freepbx14-dbint
+
+**docker push etates/freepbx
+
+**docker run -d --name FreePBX --cap-add=NET_ADMIN --cap-add=NET_RAW -v /sys/fs/cgroup:/sys/fs/cgroup:ro --tmpfs /run -v freepbxvol:/var -v /etc/localtime:/etc/localtime:ro  etates/freepbx
 
