@@ -11,7 +11,7 @@ Systemd works good and enable services: iptables, fail2ban, asterisk, mariadbd a
 
 How to run this image:
 
-**docker push etates/freepbx
+**docker push etates/freepbx**
 
-**docker run -d --name FreePBX --cap-add=NET_ADMIN --cap-add=NET_RAW -v /sys/fs/cgroup:/sys/fs/cgroup:ro --tmpfs /run -v freepbxvol:/var -v /etc/localtime:/etc/localtime:ro  etates/freepbx
+**docker run -d --name FreePBX --cap-add=NET_ADMIN --cap-add=NET_RAW -v /sys/fs/cgroup:/sys/fs/cgroup:ro --tmpfs /run -v freepbxvol:/var -v /etc/localtime:/etc/localtime:ro  etates/freepbx**
 
