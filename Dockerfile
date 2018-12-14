@@ -4,8 +4,8 @@ LABEL maintainer="Eliécer Tatés eliecer.tates@gmail.com"
 RUN mkdir -p /var/lib/asterisk ; \
 	adduser asterisk -m -c "Asterisk User" -d /var/lib/asterisk; \
 	chown -R asterisk. /var/lib/asterisk ; \
-	yum -y install epel-release yum-utils wget net-tools bind-utils ; \
-	yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm ; \
+	yum -y install --nogpgcheck epel-release yum-utils wget net-tools bind-utils ; \
+	yum -y install --nogpgcheck http://rpms.remirepo.net/enterprise/remi-release-7.rpm ; \
 \
 #Install tucny repo for asterisk 13 and enable repos
 	yum-config-manager --add-repo https://ast.tucny.com/repo/tucny-asterisk.repo ; \
@@ -13,8 +13,8 @@ RUN mkdir -p /var/lib/asterisk ; \
 	rpm --import https://ast.tucny.com/repo/RPM-GPG-KEY-dtucny ; \
 \
 #Install dependencies
-	yum -y install --nogpgcheck lynx tftp-server unixODBC mysql-connector-odbc mariadb-server mariadb \
-	httpd ncurses sendmail sendmail-cf sox newt libxml2 libtiff \
+	yum -y install --nogpgcheck tftp-server unixODBC mysql-connector-odbc mariadb-server mariadb \
+	httpd sendmail sendmail-cf sox newt libxml2 libtiff \
 	audiofile  subversion  git crontabs cronie \
 	cronie-anacron wget nano uuid sqlite net-tools gnutls python \
 	texinfo libuuid iptables-services fail2ban-server mpg123 lame-mp3x; \
@@ -25,11 +25,11 @@ RUN mkdir -p /var/lib/asterisk ; \
 	asterisk-voicemail-plain asterisk-snmp asterisk-mp3 ; \
 \
 #Install php 5.6 from remi	
-	yum -y install php php-pdo php-mysql php-mbstring php-pear php-process \
+	yum -y install --nogpgcheck php php-pdo php-mysql php-mbstring php-pear php-process \
 	php-xml php-opcache php-ldap php-intl php-soap ; \
 \
 #Install node	
-	curl -sL https://rpm.nodesource.com/setup_8.x | bash - && yum -y install nodejs
+	curl -sL https://rpm.nodesource.com/setup_8.x | bash - && yum -y install --nogpgcheck nodejs
 \
 #Install Legacy Pear requirements for FreePBX
 #RUN pear install Console_Getopt
