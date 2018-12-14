@@ -19,10 +19,13 @@ RUN mkdir -p /var/lib/asterisk ; \
 	cronie-anacron wget nano uuid sqlite net-tools gnutls python \
 	texinfo libuuid iptables-services fail2ban-server mpg123 lame-mp3x; \
 \
-#Install asterisk 13	
-	yum -y install --nogpgcheck asterisk asterisk-sip asterisk-iax2 asterisk-festival asterisk-voicemail \
-	asterisk-odbc asterisk-mysql asterisk-moh-opsound asterisk-pjsip asterisk-sounds-core-es \
-	asterisk-voicemail-plain asterisk-snmp asterisk-mp3 ; \
+#Install asterisk 13
+	VERSION="13.23.1" ; \
+	yum -y install --nogpgcheck asterisk-$VERSION asterisk-sip-$VERSION asterisk-iax2-$VERSION \
+	asterisk-festival-$VERSION asterisk-voicemail-$VERSION asterisk-odbc-$VERSION \
+	asterisk-mysql-$VERSION asterisk-moh-opsound-$VERSION asterisk-pjsip-$VERSION \
+	asterisk-voicemail-plain-$VERSION asterisk-snmp-$VERSION asterisk-mp3-$VERSION \
+	asterisk-sounds-core-es asterisk-sounds-core-en asterisk-moh-opsound ; \
 \
 #Install php 5.6 from remi	
 	yum -y install --nogpgcheck php php-pdo php-mysql php-mbstring php-pear php-process \
