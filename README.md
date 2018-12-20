@@ -9,7 +9,7 @@ Inside /var/lib/asterisk/modplus you can put g729 and g729 binary codecs from: h
 
 Systemd works good and enable services: iptables, fail2ban, asterisk, mariadbd and httpd.
 
-### Pull image:
+### Get the image:
 
 docker push etates/freepbx:latest
 
